@@ -22,7 +22,7 @@ public class DemoApplicationTests {
 		person.setName("byb");
 		person.setAge(23);
 		personService.addPerson(person);
-
+//a
 		List<Person> people=personService.getAll();
 		for (Person person1:people) {
 			System.out.println(person1.getName()+"================="+person1.getAge());
