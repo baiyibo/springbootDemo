@@ -16,12 +16,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ShiroCustomRealm extends AuthorizingRealm {
+    @Autowired
     private UserMapper userMapper;
 
-    @Autowired
-    private void setUserMapper(UserMapper userMapper) {
-        this.userMapper = userMapper;
-    }
     @Autowired
     private SystemRoleMapper systemRoleMapper;
     /**

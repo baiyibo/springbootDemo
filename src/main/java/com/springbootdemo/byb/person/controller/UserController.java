@@ -1,4 +1,4 @@
-package com.springbootdemo.byb.personaaa.controller;
+package com.springbootdemo.byb.person.controller;
 
 import com.springbootdemo.byb.person.model.Person;
 import org.springframework.stereotype.Controller;
