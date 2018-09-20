@@ -10,6 +10,7 @@ public class UserController {
 
     @RequestMapping("/hello")
     public String hello(Model m) {
+        System.out.println("hello-----------------");
         m.addAttribute("name","byb11111");
         return "hello";
     }

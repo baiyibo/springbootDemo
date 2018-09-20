@@ -12,25 +12,24 @@
     <title>登陆</title>
 </head>
 <body>
-<form>
-    name:<input type="text" id="username"/>
-    password:<input type="text" id="password"/>
+<form action="/login" method="post">
+    name:<input type="text" name="username" id="username"/>
+    password:<input type="text" name="password" id="password"/>
     <button id="submit" type="submit">登陆</button>
 </form>
 </body>
 </html>
 <script>
-    $('#submit[type="submit"]').on('click', function () {
-        var username=$('#username').val();
-        var password=$('#password').val();
-
-        $.ajax({
-            type: "post",
-            url: "/login",    //向后端请求数据的url
-            data: {username:username,password:password},
-            success: function (data) {
-              console.log(data);
-            }
-        });
-    });
+//    $('#submit[type="submit"]').on('click', function () {
+//        var username=$('#username').val();
+//        var password=$('#password').val();
+//
+//        $.ajax({
+//            type: "post",
+//            url: "/login",    //向后端请求数据的url
+//            data: {username:username,password:password},
+//            success: function (data) {
+//            }
+//        });
+//    });
 </script>
