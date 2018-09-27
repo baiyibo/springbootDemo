@@ -21,4 +21,9 @@ public class PersonServiceimpl implements PersonService {
     public List<Person> getAll() {
         return personMapper.selectAll();
     }
+
+    @Override
+    public Person selectByPrimaryKey(Integer id) {
+        return personMapper.selectByPrimaryKey(id);
+    }
 }

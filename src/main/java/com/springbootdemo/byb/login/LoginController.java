@@ -49,7 +49,6 @@ public class LoginController {
 //
         SavedRequest savedRequest = WebUtils.getSavedRequest(request);
         System.out.println(savedRequest.getRequestUrl());
-
         return "redirect:" + savedRequest.getRequestUrl();
     }
 
