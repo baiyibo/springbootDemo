@@ -1,8 +1,8 @@
-package com.springbootdemo.byb.person.service.impl;
+package com.springbootdemo.byb.system.person.service.impl;
 
-import com.springbootdemo.byb.person.mapper.PersonMapper;
-import com.springbootdemo.byb.person.model.Person;
-import com.springbootdemo.byb.person.service.PersonService;
+import com.springbootdemo.byb.system.person.mapper.PersonMapper;
+import com.springbootdemo.byb.system.person.model.Person;
+import com.springbootdemo.byb.system.person.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

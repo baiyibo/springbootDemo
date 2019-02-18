@@ -1,7 +1,7 @@
 package com.springbootdemo.byb;
 
-import com.springbootdemo.byb.person.model.Person;
-import com.springbootdemo.byb.person.service.PersonService;
+import com.springbootdemo.byb.system.person.model.Person;
+import com.springbootdemo.byb.system.person.service.PersonService;
 import com.springbootdemo.utils.Log4jUtils;
 import com.springbootdemo.utils.RedisUtils;
 import org.junit.Test;

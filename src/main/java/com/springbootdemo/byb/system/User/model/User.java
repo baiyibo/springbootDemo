@@ -4,7 +4,7 @@
 * Copyright(C) 2017-2020 byb.hwh公司
 * @date 2018-08-31
 */
-package com.springbootdemo.byb.User.model;
+package com.springbootdemo.byb.system.User.model;
 
 public class User {
     /**

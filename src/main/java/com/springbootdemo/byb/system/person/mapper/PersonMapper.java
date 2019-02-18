@@ -4,9 +4,9 @@
 * Copyright(C) 2017-2020 fendo公司
 * @date 2018-08-30
 */
-package com.springbootdemo.byb.person.mapper;
+package com.springbootdemo.byb.system.person.mapper;
 
-import com.springbootdemo.byb.person.model.Person;
+import com.springbootdemo.byb.system.person.model.Person;
 import java.util.List;
 
 import org.apache.ibatis.annotations.*;

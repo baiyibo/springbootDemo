@@ -4,7 +4,7 @@
 * Copyright(C) 2017-2020 fendo公司
 * @date 2018-08-30
 */
-package com.springbootdemo.byb.person.model;
+package com.springbootdemo.byb.system.person.model;
 
 public class Person {
     /**

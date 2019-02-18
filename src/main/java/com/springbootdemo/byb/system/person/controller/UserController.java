@@ -1,6 +1,6 @@
-package com.springbootdemo.byb.person.controller;
+package com.springbootdemo.byb.system.person.controller;
 
-import com.springbootdemo.byb.person.model.Person;
+import com.springbootdemo.byb.system.person.model.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

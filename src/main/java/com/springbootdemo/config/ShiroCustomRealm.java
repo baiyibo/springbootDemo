@@ -1,9 +1,8 @@
 package com.springbootdemo.config;
 
 import com.springbootdemo.byb.SystemRole.mapper.SystemRoleMapper;
-import com.springbootdemo.byb.SystemRole.model.SystemRole;
-import com.springbootdemo.byb.User.mapper.UserMapper;
-import com.springbootdemo.byb.User.model.User;
+import com.springbootdemo.byb.system.User.mapper.UserMapper;
+import com.springbootdemo.byb.system.User.model.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
