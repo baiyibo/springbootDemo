@@ -24,7 +24,7 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		Log4jUtils.getLogger().error("asdasdasdsaddsa");
+		Log4jUtils.getLogger().info("asdasdasdsaddsa");
 	}
 
 
@@ -33,7 +33,7 @@ public class DemoApplicationTests {
 	 *查询数据
 	 *并将数据数据存在redis里
 	 */
-	@Test
+//	@Test
 	public void testfind() {
 		//如果缓存存在
 		boolean hasKey = redisUtils.exists("testkey".concat("1"));
