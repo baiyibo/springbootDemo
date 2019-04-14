@@ -11,7 +11,7 @@ public class UserController {
     @RequestMapping("/hello")
     public String hello(Model m) {
         System.out.println("hello-----------------");
-        m.addAttribute("name","byb222");
+        m.addAttribute("name","qqqqqqqqqqqqqq");
         return "hello";
     }
 
