@@ -9,6 +9,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import shejimoshi.proxy.staticProxy.Singer;
+import shejimoshi.proxy.staticProxy.SingerMan;
+import shejimoshi.proxy.staticProxy.SingerManProxy;
 
 import java.util.concurrent.TimeUnit;
 
@@ -50,6 +53,13 @@ public class DemoApplicationTests {
 			Log4jUtils.getLogger().info("数据插入缓存"+user.getName());
 		}
 
+	}
+
+	@Test
+	public  void test(){
+		Singer singerMan = new SingerMan();
+		Singer singerManproxy= new SingerManProxy(singerMan);
+		singerManproxy.sing("byb");
 	}
 
 

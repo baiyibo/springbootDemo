@@ -8,3 +8,4 @@
 [11:16:53:645] [WARN] - org.mybatis.spring.mapper.ClassPathMapperScanner.doScan(ClassPathMapperScanner.java:166) - No MyBatis mapper was found in '[com.springbootdemo.*.mapper]' package. Please check your configuration.
 [11:17:20:101] [WARN] - org.mybatis.spring.mapper.ClassPathMapperScanner.doScan(ClassPathMapperScanner.java:166) - No MyBatis mapper was found in '[com.springbootdemo.*.mapper]' package. Please check your configuration.
 [11:18:38:303] [WARN] - org.mybatis.spring.mapper.ClassPathMapperScanner.doScan(ClassPathMapperScanner.java:166) - No MyBatis mapper was found in '[com.springbootdemo.*.mapper]' package. Please check your configuration.
+[13:59:09:537] [WARN] - org.mybatis.spring.mapper.ClassPathMapperScanner.doScan(ClassPathMapperScanner.java:166) - No MyBatis mapper was found in '[com.springbootdemo.*.mapper]' package. Please check your configuration.
