@@ -55,6 +55,8 @@ public class ProxyFactory {
 
         // 给目标对象，创建代理对象
         Singer proxy = (Singer) new ProxyFactory(target).getProxyInstance();
+        System.out.println(proxy.getClass().getName());
+
         // class $Proxy0   内存中动态生成的代理对象
         System.out.println(proxy.getClass());
 

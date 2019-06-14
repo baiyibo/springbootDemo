@@ -4,6 +4,7 @@ import com.springbootdemo.byb.person.model.Person;
 import com.springbootdemo.byb.person.service.PersonService;
 import com.springbootdemo.utils.Log4jUtils;
 import com.springbootdemo.utils.RedisUtils;
+import com.springbootdemo.utils.SoftRefCache.SoftRefCache;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,11 @@ import shejimoshi.proxy.staticProxy.Singer;
 import shejimoshi.proxy.staticProxy.SingerMan;
 import shejimoshi.proxy.staticProxy.SingerManProxy;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.TypeVariable;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringRunner.class)
@@ -62,5 +68,62 @@ public class DemoApplicationTests {
 		singerManproxy.sing("byb");
 	}
 
+	@Test
+	public  void tes1t(){
+		ArrayList<String> list=new ArrayList<>();
+		list.add("11");
+		list.add("22");
+		String a=list.set(0,"333");
+		System.out.println(a);
+	}
 
+
+
+	/**
+	 *
+	 *测试软引用缓存
+	 */
+	@Test
+	public void testsoftCache() {
+		//最大可用内存，对应-Xmx
+		System.out.println(	"总可用内存:"+((Runtime.getRuntime().maxMemory() / (1024 * 1024)))+"M");
+		System.out.println(	"当前占用内存:"+(Runtime.getRuntime().totalMemory() / (1024 * 1024))+"M");
+		TestCache testCache = new TestCache();
+
+		testCache.set("key1",new byte[1024*1024*600]);
+		testCache.set("key2",new byte[1024*1024*600]);
+		testCache.set("key3",new byte[1024*1024*600]);
+		testCache.set("key4",new byte[1024*1024*600]);
+		System.out.println(	"当前占用内存:"+(Runtime.getRuntime().totalMemory() / (1024 * 1024))+"M");
+		testCache.get("key1");
+		testCache.set("key5",new byte[1024*1024*600]);
+		System.out.println(	"当前占用内存:"+(Runtime.getRuntime().totalMemory() / (1024 * 1024))+"M");
+		testCache.get("key1");
+		//当前JVM占用的内存总数，其值相当于当前JVM已使用的内存及freeMemory()的总和
+		System.out.println(	"当前占用内存:"+(Runtime.getRuntime().totalMemory() / (1024 * 1024))+"M");
+
+
+//		 Runtime.getRuntime().freeMemory();  //当前JVM空闲内存
+
+
+	}
+
+	@Test
+	public void testClassMethod() throws Exception {
+		Class c = Class.forName("com.springbootdemo.byb.TestCache");
+		Method ac=c.getMethod("createValue",Object.class);
+			System.out.println(ac);
+
+	}
+}
+
+//test111111
+class TestCache extends SoftRefCache{
+
+	@Override
+	protected Object createValue(Object key) {
+		System.out.println("内存被回收，创建新对象加入缓存");
+		byte[] bytes = new byte[1024*1024*300];  //100M
+		return bytes;
+	}
 }
