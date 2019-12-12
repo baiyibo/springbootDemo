@@ -1,11 +1,14 @@
 
 package com.springbootdemo.byb.base.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-
+@ApiModel(value = "返回说明")
 public class AjaxMessage implements Serializable {
 
 	private static final long	serialVersionUID	= -7295464290183189928L;
@@ -15,8 +18,10 @@ public class AjaxMessage implements Serializable {
 	public static final String	STATUS_ERROR		= "error";
 	public static final String	STATUS_WARN			= "warn";
 
+	@ApiModelProperty(value = "成功标识；success：成功；fail:失败;error错误；warn警告")
 	private String				status;
 	private Object				data;
+	@ApiModelProperty(value = "描述信息")
 	private String				message;
 
 	public boolean isSuccess() {

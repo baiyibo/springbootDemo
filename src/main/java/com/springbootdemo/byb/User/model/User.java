@@ -6,6 +6,10 @@
 */
 package com.springbootdemo.byb.User.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel
 public class User {
     /**
      * 
@@ -15,11 +19,13 @@ public class User {
     /**
      * 
      */
+    @ApiModelProperty(value="用户名", required = true, dataType = "String",example = "byb")
     private String name;
 
     /**
      * 
      */
+    @ApiModelProperty(value="用户密码", required = true, dataType = "String",example = "123456")
     private String password;
 
     /**

@@ -1,7 +1,12 @@
 package com.springbootdemo.byb.login;
 
 import com.springbootdemo.byb.User.mapper.UserMapper;
+import com.springbootdemo.byb.User.model.User;
 import com.springbootdemo.byb.base.model.AjaxMessage;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -18,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
+@Api(value = "登录接口")
 public class LoginController {
 
     @Autowired
@@ -29,14 +35,21 @@ public class LoginController {
         return "login";
     }
 
+    @ApiOperation(value="登陆", notes="登陆")
+//    @ApiImplicitParams({
+//
+//            @ApiImplicitParam(paramType = "query", name = "username", value = "用户名", required = true, dataType = "String"),
+//            @ApiImplicitParam(paramType = "query", name = "password", value = "密码", required = true, dataType = "String")
+//
+//    })
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login(HttpServletRequest request, String username, String password){
-        System.out.println(username+"-----------"+password);
+    public String login(HttpServletRequest request, User user){
+        System.out.println(user.getName()+"-----------"+user.getPassword());
         // 从SecurityUtils里边创建一个 subject
         Subject subject = SecurityUtils.getSubject();
 
         // 在认证提交前准备 token（令牌）
-        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+        UsernamePasswordToken token = new UsernamePasswordToken(user.getName(), user.getPassword());
         // 执行认证登陆
         try {
             subject.login(token);
